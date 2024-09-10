@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Form cơ bản</title>
+</head>
+<body>
+<h1>Order Form</h1>
+<p> <b>What would you like to buy?</b> </p>
+   <select name="buy">
+       <option value="a">A</option>
+       <option value="b">B</option>
+       <option value="c">C</option>
+   </select>
+<p> <b>How many would you like to order?</b> </p>
+   <form action="/action_page.php">
+       <label><input name="gia" value="1" type="radio">1 - 10$</label> <br>
+       <label><input name="gia" value="2" type="radio">2 - 20$</label> <br>
+       <label><input name="gia" value="3" type="radio">3 - 25$</label> <br>
+   </form>
+<p> <b>Name</b></p>
+   <input type="text" name="firstname" value="FirstName" size="15">
+   <input type="text" name="lastnam" value="LastName" size="15"> <br>
+<p> <b>Email</b></p>
+   <input type="text" name="email" size="37">
+<p> <b>Phone</b></p>
+   <input type="text" name="phone1" size="7"> -
+   <input type="text" name="phone2" size="7"> -
+   <input type="text" name="phone3" size="7"> <br>
+<p>   <input type="button" name="submit" value="Submit"> </p>
+
+</form>
+</body>
+</html>

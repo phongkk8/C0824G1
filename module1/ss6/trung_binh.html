@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Trung bình 3 môn</title>
+</head>
+<body>
+<form>
+  <p><b>Nhập điểm Toán</b></p>
+  <input id="toan" type="number"> <br>
+  <p><b>Nhập điểm Lý</b></p>
+  <input id="ly" type="number"> <br>
+  <p> <b>Nhập điểm Hóa</b></p>
+  <input id="hoa" type="number"> <br>
+  <button type="button" style="background: darkgoldenrod;width: 50px" onclick="tb()">Điểm TB</button>
+</form>
+
+<script>
+    function tb(){
+        let toan2 = parseFloat(document.getElementById("toan").value);
+        let ly2 = parseFloat(document.getElementById("ly").value);
+        let hoa2 = parseFloat(document.getElementById("hoa").value);
+        let avg = (toan2 + ly2 + hoa2)/3
+        alert(avg);
+    }
+</script>
+</body>
+</html>

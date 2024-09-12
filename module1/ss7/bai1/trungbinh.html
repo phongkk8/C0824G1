@@ -1,0 +1,33 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Trung bình 3 môn</title>
+  <style>
+  </style>
+</head>
+<body>
+<form>
+  <p><b>Nhập điểm Vật Lý</b></p>
+  <input id="ly" type="number"> <br>
+  <p><b>Nhập điểm Hóa Học</b></p>
+  <input id="hoa" type="number"> <br>
+  <p> <b>Nhập điểm Sinh Học</b></p>
+  <input id="sinh" type="number"> <br>
+  <button type="button" style="background:royalblue;width: 50px;height: 30px" onclick="tb()">Xuất</button>
+  <p id="tb"> Điểm TB:</p>
+  <p id="tong">Điểm Tổng</p>
+</form>
+
+<script>
+  function tb(){
+    let ly1 = parseFloat(document.getElementById("ly").value);
+    let hoa1 = parseFloat(document.getElementById("hoa").value);
+    let sinh1 = parseFloat(document.getElementById("sinh").value);
+    let tong =ly1 + hoa1 + sinh1
+    let avg = (ly1 + hoa1 + sinh1)/3
+    document.getElementById("tb").innerHTML= "Điểm TB:" +avg;
+    document.getElementById("tong").innerHTML= "Điểm Tổng:" +tong;
+  }
+</script>
+</body>
+</html>

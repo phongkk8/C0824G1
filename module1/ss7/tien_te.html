@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Chuyển đổi tiền tệ</title>
+  <style>
+    table {border: solid 1px}
+    tr td {border: solid 1px}
+    th {border: solid 1px }
+  </style>
+</head>
+<body>
+<form>
+<table>
+  <tr>
+    <th>Amount</th>
+    <th>From Currency</th>
+    <th>To Currency</th>
+    <th></th>
+  </tr>
+  <tr>
+    <td><input type="number" id="sotien" placeholder="Nhập số tiền"></td>
+    <td>
+      <select id="from">
+        <option value="USD">USD</option>
+        <option value="VND">VND</option>
+      </select>
+    </td>
+    <td>
+      <select id="to">
+        <option value="VND">VND</option>
+        <option  value="USD">USD</option>
+      </select>
+    </td>
+    <td><button type="button" onclick="ChangeMoney()" style="background: orange">Convert</button></td>
+  </tr>
+</table>
+</form>
+<br>
+<p id="result"></p>
+<script>
+  function ChangeMoney(){
+    let amount = parseFloat(document.getElementById("sotien").value);
+    let From = parseInt(document.getElementById("from").value);
+    let To = parseInt(document.getElementById("to").value);
+    let result = amount * 23000
+    if ()
+    document.getElementById("result").innerHTML= "Kết quả:" +result;
+  }
+
+</script>
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Caculator</title>
+  <style>
+    table {border: solid 1px;}
+    td:nth-child(2){text-align: center}
+
+  </style>
+</head>
+<body>
+<h2>Caculator</h2>
+<table>
+  <tr >
+    <td colspan="2">
+      <input type="number" id="number1" placeholder="Nhập số thứ nhất">
+    </td>
+    <td colspan="2">
+      <input type="number" id="number2" placeholder="Nhập số thứ hai">
+    </td>
+
+  </tr>
+  <tr>
+    <td>
+      <input type="button" onclick="add()" style="background: royalblue" value="Addition(+)"></td>
+    <td>
+      <input type="button" onclick="sub()" style="background: royalblue" value="Subtraction(-)">
+    </td>
+    <td>
+      <input type="button" onclick="mul()" style="background: royalblue" value="Multiplicaltion(X)">
+    </td>
+    <td>
+      <input type="button" onclick="div()" style="background: royalblue" value="Divison(%)">
+    </td>
+  </tr>
+</table>
+<p id="ketqua"></p>
+<script>
+
+    function add(){
+      let Num1 = parseFloat(document.getElementById("number1").value);
+      let Num2 = parseFloat(document.getElementById("number2").value);
+      let result= Num1+Num2
+      document.getElementById("ketqua").innerHTML= "Tổng 2 số là:" +result;
+    }
+    function sub(){
+      let Num1 = parseFloat(document.getElementById("number1").value);
+      let Num2 = parseFloat(document.getElementById("number2").value);
+      let result= Num1-Num2
+      document.getElementById("ketqua").innerHTML= "Hiệu 2 số là:" +result;
+    }
+    function mul(){
+      let Num1 = parseFloat(document.getElementById("number1").value);
+      let Num2 = parseFloat(document.getElementById("number2").value);
+      let result= Num1*Num2
+      document.getElementById("ketqua").innerHTML= "Tích 2 số là:" +result;
+    }
+    function div(){
+      let Num1 = parseFloat(document.getElementById("number1").value);
+      let Num2 = parseFloat(document.getElementById("number2").value);
+      let result= Num1/Num2
+      document.getElementById("ketqua").innerHTML= "Thương 2 số là:" +result;
+    }
+
+</script>
+
+
+</body>
+</html>

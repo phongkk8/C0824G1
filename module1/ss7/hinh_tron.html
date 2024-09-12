@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>C & S hình tròn</title>
+</head>
+<body>
+<form>
+  <p>Nhập bán kính:</p>
+  <input id="r" type="number"> <br>
+  <button type="button" style="background:yellow;width: 70px;height: 30px" onclick="tinh()">Xuất KQ</button>
+  <p id ="chuvi"></p>
+  <p id ="dientich"></p>
+</form>
+<script>
+  function tinh(){
+    let R = parseFloat(document.getElementById("r").value);
+    let c = (R*2)*3.14
+    let s = (R*R)*3.14
+    document.getElementById("chuvi").innerHTML= "Chu vi là:" +c;
+    document.getElementById("dientich").innerHTML= "Diện tích là:" +s;
+  }
+
+</script>
+</body>
+</html>

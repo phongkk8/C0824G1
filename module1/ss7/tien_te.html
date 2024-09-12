@@ -41,7 +41,7 @@
                 </select>
             </td>
             <td>
-                <button type="button" onclick="ChangeMoney()" style="background: orange">Convert</button>
+                <button type="button" onclick="changeMoney()" style="background: orange">Convert</button>
             </td>
         </tr>
     </table>
@@ -50,7 +50,7 @@
 <p id="print"></p>
 <script>
 
-  function ChangeMoney() {
+  function changeMoney() {
         let from1 =document.getElementById("from").value;
         let to1 = document.getElementById("to").value;
         let amount1 = parseFloat(document.getElementById("amount").value);

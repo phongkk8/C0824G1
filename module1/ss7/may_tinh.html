@@ -35,32 +35,37 @@
     </td>
   </tr>
 </table>
-<p id="ketqua"></p>
+<p id="print"></p>
 <script>
 
     function add(){
-      let Num1 = parseFloat(document.getElementById("number1").value);
-      let Num2 = parseFloat(document.getElementById("number2").value);
-      let result= Num1+Num2
-      document.getElementById("ketqua").innerHTML= "Tổng 2 số là:" +result;
+      let num1 = parseFloat(document.getElementById("number1").value);
+      let num2 = parseFloat(document.getElementById("number2").value);
+      let result= num1+num2
+      document.getElementById("print").innerHTML= "Tổng 2 số là:" +result;
     }
     function sub(){
-      let Num1 = parseFloat(document.getElementById("number1").value);
-      let Num2 = parseFloat(document.getElementById("number2").value);
-      let result= Num1-Num2
-      document.getElementById("ketqua").innerHTML= "Hiệu 2 số là:" +result;
+      let num1 = parseFloat(document.getElementById("number1").value);
+      let num2 = parseFloat(document.getElementById("number2").value);
+      let result= num1-num2
+      document.getElementById("print").innerHTML= "Hiệu 2 số là:" +result;
     }
     function mul(){
-      let Num1 = parseFloat(document.getElementById("number1").value);
-      let Num2 = parseFloat(document.getElementById("number2").value);
-      let result= Num1*Num2
-      document.getElementById("ketqua").innerHTML= "Tích 2 số là:" +result;
+      let num1 = parseFloat(document.getElementById("number1").value);
+      let num2 = parseFloat(document.getElementById("number2").value);
+      let result= num1*num2
+      document.getElementById("print").innerHTML= "Tích 2 số là:" +result;
     }
-    function div(){
-      let Num1 = parseFloat(document.getElementById("number1").value);
-      let Num2 = parseFloat(document.getElementById("number2").value);
-      let result= Num1/Num2
-      document.getElementById("ketqua").innerHTML= "Thương 2 số là:" +result;
+    function div() {
+      let num1 = parseFloat(document.getElementById("number1").value);
+      let num2 = parseFloat(document.getElementById("number2").value);
+      if (num2 !== 0) {
+        let result = num1 / num2
+      document.getElementById("print").innerHTML = "Thương 2 số là:" + result;
+      }
+      else
+      document.getElementById("print").innerHTML= "Phép chia không hợp lệ, Nhập lại số thứ 2";
+
     }
 
 </script>

@@ -27,7 +27,7 @@
             <th></th>
         </tr>
         <tr>
-            <td><input type="number" id="sotien" placeholder="Nhập số tiền"></td>
+            <td><input type="number" id="amount" placeholder="Nhập số tiền"></td>
             <td>
                 <select id="from">
                     <option value="usd">USD</option>
@@ -47,20 +47,20 @@
     </table>
 </form>
 <br>
-<p id="ketqua"></p>
+<p id="print"></p>
 <script>
 
   function ChangeMoney() {
-        let From =document.getElementById("from").value;
-        let To = document.getElementById("to").value;
-        let soTien = parseFloat(document.getElementById("sotien").value);
-        if (From == "usd" && To == "vnd") {
-            let result = soTien * 23000
-            document.getElementById("ketqua").innerHTML = "Kết quả:" + result;
-        } else if (From == "vnd" && To == "usd") {
-            let result = soTien / 23000
-            document.getElementById("ketqua").innerHTML = "Kết quả:" + result;
-        } else document.getElementById("ketqua").innerHTML = "Không hợp lệ:";
+        let from1 =document.getElementById("from").value;
+        let to1 = document.getElementById("to").value;
+        let amount1 = parseFloat(document.getElementById("amount").value);
+        if (from1 == "usd" && to1 == "vnd") {
+            let result = amount1 * 23000
+            document.getElementById("print").innerHTML = "Kết quả:" + result;
+        } else if (from1 == "vnd" && to1 == "usd") {
+            let result = amount1 / 23000
+            document.getElementById("print").innerHTML = "Kết quả:" + result;
+        } else document.getElementById("print").innerHTML = "Không hợp lệ:";
     }
 </script>
 </body>

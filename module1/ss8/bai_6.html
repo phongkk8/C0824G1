@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tính hoa hồng</title>
+</head>
+<h2>Tính hoa hồng</h2>
+<body>
+<form>
+  <p>Nhập Doanh Số:</p>
+<input type="number" id="doanhSo" placeholder="Nhập Doanh Số (VND): "><br>
+<input type="button" onclick="tinhHH()" value="Kết quả">
+<p id="print"></p>
+</form>
+<script>
+  function tinhHH(){
+    let doanhSo1 = parseFloat(document.getElementById("doanhSo").value);
+  if (doanhSo1<=1000000) {
+    let hoaH = doanhSo1 * 5 / 100;
+    {document.getElementById("print").innerHTML="Bán: "+doanhSo1+"VND. Bạn nhận được: "+hoaH+"VND"}
+  }
+    else if(doanhSo1<=3000000) {
+           let hoaH = doanhSo1 * 10 / 100;
+           {document.getElementById("print").innerHTML="Bán: "+doanhSo1+"VND. Bạn nhận được: "+hoaH+"VND"}
+  }
+         else {
+               let hoaH = doanhSo1 * 20 / 100;
+               {document.getElementById("print").innerHTML="Bán: "+doanhSo1+"VND. Bạn nhận được: "+hoaH+"VND"}
+    }
+  }
+</script>
+</body>
+</html>

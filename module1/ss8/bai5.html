@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Học lực</title>
+</head>
+<h2>Xếp loại Học Lực</h2>
+<body>
+<form>
+  <input type="number" id="pointTB" placeholder="Nhập điểm TB môn">
+  <input type="number" id="pointGK" placeholder="Nhập điểm giữa kỳ">
+  <input type="number" id="pointCK" placeholder="Nhập điểm cuối kỳ"><br>
+  <input type="button" onclick="checkRate()" value="Kiểm tra">
+    <p id="print"></p>
+</form>
+<script>
+  function checkRate(){
+    let pointTBcheck = parseFloat(document.getElementById("pointTB").value);
+    let pointGKcheck = parseFloat(document.getElementById("pointGK").value);
+    let pointCKcheck = parseFloat(document.getElementById("pointCK").value);
+    let avg = (pointTBcheck+(pointGKcheck*2)+(pointCKcheck*3))/6
+    if (avg>=8){
+        document.getElementById("print").innerHTML="Điểm tổng kết: "+avg+" Xếp loại Giỏi"}
+        else if(avg>=6.5){
+        document.getElementById("print").innerHTML="Điểm tổng kết: "+avg+" Xếp loại Khá"}
+            else if (avg>=5) {
+                document.getElementById("print").innerHTML="Điểm tổng kết: "+avg+" Xếp loại Đạt"}
+                  else {document.getElementById("print").innerHTML="Điểm tổng kết: "+avg+" Chưa đạt"}
+  }
+</script>
+</body>
+</html>

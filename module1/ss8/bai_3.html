@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Kiểm tra số nguyên</title>
+</head>
+<h2>Kiểm tra số</h2>
+<body>
+<form>
+  <input type="number" id="number" placeholder="Nhập một số nguyên bất kỳ"><br>
+  <input type="button" onclick="check()" value="Kiểm tra">
+  <p id="print"></p>
+</form>
+<script>
+  function check(){
+    let numberCheck = parseInt(document.getElementById("number").value);
+    if (numberCheck==0){
+       document.getElementById("print").innerHTML="Nhập lại"}
+      else if (numberCheck>0){
+        document.getElementById("print").innerHTML="Số "+numberCheck+" lớn hơn 0"}
+    else {
+      document.getElementById("print").innerHTML="Số "+numberCheck+" bé hơn 0"}
+  }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Kiểm tra max</title>
+</head>
+<h1>Max của 3 số</h1>
+<body>
+<form>
+  <input type="number" id="number1" placeholder="Nhập số thứ nhất">
+  <input type="number" id="number2" placeholder="Nhập số thứ hai">
+  <input type="number" id="number3" placeholder="Nhập số thứ ba"><br>
+  <input type="button" onclick="checkMax()" value="Kiểm tra">
+  <p id="print"></p>
+  <script>
+    function checkMax(){
+      let numberCheck1= parseFloat(document.getElementById("number1").value);
+      let numberCheck2= parseFloat(document.getElementById("number2").value);
+      let numberCheck3= parseFloat(document.getElementById("number3").value);
+      let max= numberCheck1
+      if(max<numberCheck2){
+          max=numberCheck2}
+         if (max<numberCheck3){
+                max=numberCheck3}
+        {document.getElementById("print").innerHTML="Số "+max+" lớn nhất"}
+    }
+  </script>
+
+</form>
+
+</body>
+</html>

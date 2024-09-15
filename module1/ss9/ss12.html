@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>tính lãi xuất ngân hàng</title>
+</head>
+<h2>Tính lãi xuất ngân hàng</h2>
+<body>
+<form>
+  <input type="number" id="amount" placeholder="Nhập số tiền cần vay"><br>
+  <input type="number" id="month" placeholder="Nhập số tháng vay"><br>
+  <input type="number" id="interest" placeholder="Nhập lãi xuất (%)"><br>
+  <input type="button" onclick="result()" value="Kết quả"><br>
+  <p id="print"></p>
+</form>
+<script>
+    function result(){
+        let aMout= parseFloat(document.getElementById("amount").value)
+        let monthLoan= parseFloat(document.getElementById("month").value)
+        let interestLoan= parseFloat(document.getElementById("interest").value)
+        if(aMout<=0||monthLoan<=0||interestLoan<=0){
+            document.getElementById("print").innerHTML ="Thông tin không hợp lệ. Nhập lại!"
+        }
+        else {
+            let totalAmount= aMout*(Math.pow((1+(interestLoan/100)),monthLoan))
+            document.getElementById("print").innerHTML ="Số tiền phải trả sau "+monthLoan+" tháng là: "+totalAmount
+        }
+    }
+</script>
+</body>
+</html>

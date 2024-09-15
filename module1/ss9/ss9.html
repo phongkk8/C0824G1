@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>kiểm tra tam giác</title>
+</head>
+<h2>Kiểm tra hình tam giác</h2>
+<body>
+<form>
+    <input type="text" id="a" placeholder="Nhập cạnh thứ nhất"><br>
+    <input type="text" id="b" placeholder="Nhập cạnh thứ hai"><br>
+    <input type="text" id="c" placeholder="Nhập cạnh thứ ba"><br>
+    <input type="button" onclick="check()" value="Kiểm tra">
+    <p id="print"></p>
+</form>
+<script>
+    function check() {
+        let aCheck = parseFloat(document.getElementById("a").value)
+        let bCheck = parseFloat(document.getElementById("b").value)
+        let cCheck = parseFloat(document.getElementById("c").value)
+        if (aCheck == 0 || bCheck == 0 || cCheck == 0) {
+            document.getElementById("print").innerHTML = "Mời nhập lại"
+        } else if (aCheck + bCheck > cCheck && aCheck + cCheck > bCheck && bCheck + cCheck > aCheck) {
+            document.getElementById("print").innerHTML = aCheck + " và " + bCheck + " và " + cCheck + " là ba cạnh của một tam giác"
+        } else {
+            document.getElementById("print").innerHTML = aCheck + " và " + bCheck + " và " + cCheck + " Không phải ba cạnh của một tam giác"
+        }
+    }
+
+</script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tính giá điện</title>
+</head>
+<h2>Tính giá điện:</h2>
+<body>
+<form>
+    <input type="text" id="kwh" placeholder="Nhập số điện tiêu thụ">
+    <input type="button" onclick="result()" value="Kết quả">
+    <p id="print"></p>
+</form>
+<script>
+    function result() {
+        let kwh1 = parseFloat(document.getElementById("kwh").value)
+        if (kwh1 <= 0) {
+            document.getElementById("print").innerHTML = "Nhập sai"
+        } else if (kwh1 > 0 && kwh1 <= 50) {
+            let price = kwh1 * 1000
+            document.getElementById("print").innerHTML = "Thành tiền: " + price + "VND"
+        } else if (kwh1 > 50 && kwh1 <= 100) {
+            let price = (50 * 1000) + (kwh1 - 50) * 1500
+            document.getElementById("print").innerHTML = "Thành tiền: " + price + "VND"
+        } else if (kwh1 > 100 && kwh1 <= 200) {
+            let price = (50 * 1000) + (50 * 1500) + (kwh1 - 100) * 2000
+            document.getElementById("print").innerHTML = "Thành tiền: " + price + "VND"
+        } else if (kwh1 > 200 && kwh1 <= 300) {
+            let price = (50 * 1000) + (50 * 1500) + (100 * 2000) + ((kwh1 - 200) * 2500)
+            document.getElementById("print").innerHTML = "Thành tiền: " + price + "VND"
+        } else {
+            let price = (50 * 1000) + (50 * 1500) + (100 * 2000) + (100 * 2500) + ((kwh1 - 300) * 3000)
+            document.getElementById("print").innerHTML = "Thành tiền: " + price + "VND"
+        }
+    }
+</script>
+
+</body>
+</html>

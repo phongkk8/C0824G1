@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>tính thuế thu nhập cá nhân</title>
+</head>
+<h2>Tính thuế thu nhập cá nhân</h2>
+<body>
+<form>
+  <p>Thu nhập của bạn:</p><br>
+  <input type="text" id="income" placeholder="Đơn vị .000.000 VNĐ"><br>
+  <input type="button" onclick="result()" value="Kết quả">
+  <p id="print"></p>
+</form>
+<script>
+  function result(){
+    let inCome = parseFloat(document.getElementById("income").value)
+    if(inCome<=0){document.getElementById("print").innerHTML="Nhập lại"}
+    else if(inCome<=10000000){
+      let vat = inCome*0.05
+      document.getElementById("print").innerHTML = "Số tiền đóng thuế: " + vat + "VND"
+    }
+    else if(inCome>10000000&&inCome<=20000000){
+      let vat=(1000000*0.05)+((inCome-10000000)*0.1)
+      document.getElementById("print").innerHTML = "Số tiền đóng thuế: " + vat + "VND"
+    }
+    else if(inCome>20000000&&inCome<=30000000){
+      let vat=(10000000*0.05)+(10000000*0.1)+((inCome-20000000)*0.15)
+      document.getElementById("print").innerHTML = "Số tiền đóng thuế: " + vat + "VND"
+    }
+    else if(inCome>30000000&&inCome<=40000000){
+      let vat=(10000000*0.05)+(10000000*0.1)+(10000000*0.15)+((inCome-30000000)*0.2)
+      document.getElementById("print").innerHTML = "Số tiền đóng thuế: " + vat + "VND"
+    }
+    else if(inCome>40000000&&inCome<=50000000){
+      let vat=(10000000*0.05)+(10000000*0.1)+(10000000*0.15)+(10000000*0.2)+((inCome-40000000)*0.25)
+      document.getElementById("print").innerHTML = "Số tiền đóng thuế: " + vat + "VND"
+    }
+    else if(inCome>50000000&&inCome<=60000000){
+      let vat=(10000000*0.05)+(10000000*0.1)+(10000000*0.15)+(10000000*0.2)+(10000000*0.25)+((inCome-50000000)*0.3)
+      document.getElementById("print").innerHTML = "Số tiền đóng thuế: " + vat + "VND"
+    }
+    else {
+      let vat=(10000000*0.05)+(10000000*0.1)+(10000000*0.15)+(10000000*0.2)+(10000000*0.25)+(10000000*0.3)+((inCome-60000000)*0.35)
+      document.getElementById("print").innerHTML = "Số tiền đóng thuế: " + vat + "VND"
+    }
+  }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>kiểm tra tuổi</title>
+</head>
+<h2>Kiểm tra độ tuổi</h2>
+<body>
+<form>
+    <input type="number" id="age" placeholder="Nhập số tuổi">
+    <input type="button" onclick="checkAge()" value="Kiểm tra">
+    <p id="print"></p>
+</form>
+<script>
+    function checkAge() {
+        let ageCheck = parseInt(document.getElementById("age").value)
+        if (ageCheck <= 0 || ageCheck > 120) {
+            document.getElementById("print").innerHTML = "Tuổi nhập sai"
+        } else if (ageCheck >= 1 && ageCheck <= 6) {
+            document.getElementById("print").innerHTML = +ageCheck + "tuổi là trẻ nhỏ"
+        } else if (ageCheck >= 6 && ageCheck <= 12) {
+            document.getElementById("print").innerHTML = +ageCheck + "tuổi Đang tuổi tiểu học"
+        } else if (ageCheck > 12 && ageCheck <= 18) {
+            document.getElementById("print").innerHTML = +ageCheck + "tuổi Đang là thiếu niên"
+        } else if (ageCheck > 18 && ageCheck <= 40) {
+            document.getElementById("print").innerHTML = +ageCheck + "tuổi Đang tuổi trưởng thành"
+        } else if (ageCheck > 40 && ageCheck <= 65) {
+            document.getElementById("print").innerHTML = +ageCheck + "tuổi Đang là trung niên"
+        } else {
+            document.getElementById("print").innerHTML = +ageCheck + "tuổi Là tuổi Già"
+        }
+    }
+
+</script>
+</body>
+</html>

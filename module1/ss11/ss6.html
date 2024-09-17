@@ -1,10 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>tổng chia hết cho 7</title>
 </head>
 <body>
-$END$
+<script>
+    let total = 0
+    let num = 0
+    for (let count = 0; count <= 100000 && num <30; count++) {
+        if (count % 7 == 0) {
+            total += count
+            num++
+            document.write(count + "<br>")
+        }
+    }
+    document.write("Tổng các số chia hết cho 7 là: " + total)
+</script>
 </body>
 </html>

@@ -1,10 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>bảng cửu chương</title>
 </head>
+<h2>Bảng cửu chương</h2>
 <body>
-$END$
+<script>
+    let calculation = "<table border='3' height='80px' cellspacing='0' cellpadding='10'>"
+    for (i = 1; i <= 10; i++) {
+        calculation = calculation + "<tr>"
+        for (j = 2; j <= 10; j++) {
+            calculation = calculation + "<td>" + j + "x" + i + "=" + i * j + "</td>"
+        }
+        calculation = calculation + "</tr>"
+    }
+    calculation = calculation + "</table>"
+    document.write(calculation)
+</script>
 </body>
 </html>

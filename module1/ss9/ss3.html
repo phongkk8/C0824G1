@@ -6,9 +6,13 @@
 </head>
 <h2>Diện tích hình vuông</h2>
 <script>
-  let length= prompt("Nhập cạnh của hình vuông")
-  let area= length*length
-  alert("Diện tích hình vuông là: " +area)
+    let length = prompt("Nhập cạnh của hình vuông")
+    if (length <= 0 || isNaN(length)) {
+        alert("Nhập sai")
+    } else {
+        let area = length * length
+        alert("Diện tích hình vuông là: " + area)
+    }
 </script>
 <body>
 </body>

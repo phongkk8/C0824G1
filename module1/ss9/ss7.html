@@ -7,43 +7,46 @@
 <h2>Giải phương trình ax^2 + bx + c = 0</h2>
 <body>
 <form>
-<input type="number" id="a" placeholder="nhập giá trị a"> <br>
-<input type="number" id="b" placeholder="nhập giá trị b"><br>
-<input type="number" id="c" placeholder="nhập giá trị c"><br>
-<input type="button" onclick="result()" value="Kết quả">
-<p id="print"></p>
+    <input type="number" id="a" placeholder="nhập giá trị a"> <br>
+    <input type="number" id="b" placeholder="nhập giá trị b"><br>
+    <input type="number" id="c" placeholder="nhập giá trị c"><br>
+    <input type="button" onclick="result()" value="Kết quả">
+    <p id="print"></p>
 </form>
 <script>
-  function result() {
-    let a1 = parseFloat(document.getElementById("a").value);
-    let b1 = parseFloat(document.getElementById("b").value);
-    let c1 = parseFloat(document.getElementById("c").value);
-    let delta = b1 * b1 - 4 * a1 * c1
-    if (a1 == 0) {
-      if (b1 == 0) {
-        if (c1 == 0) {
-          document.getElementById("print").innerHTML = "TP vô số nghiệm"
+    function result() {
+        let a1 = parseFloat(document.getElementById("a").value);
+        let b1 = parseFloat(document.getElementById("b").value);
+        let c1 = parseFloat(document.getElementById("c").value);
+        if (isNaN(a1) || isNaN(b1) || isNaN(c1)) {
+            document.getElementById("print").innerHTML = "Mời nhập lại"
         } else {
-          document.getElementById("print").innerHTML = "PT vô nghiệm"
+            if (a1 == 0) {
+                if (b1 == 0) {
+                    if (c1 == 0) {
+                        document.getElementById("print").innerHTML = "TP vô số nghiệm"
+                    } else {
+                        document.getElementById("print").innerHTML = "PT vô nghiệm"
+                    }
+                } else {
+                    let x = -c1 / b1
+                    document.getElementById("print").innerHTML = "PT có một nghiệm: " + x
+                }
+            } else {
+                let delta = b1 * b1 - 4 * a1 * c1
+                if (delta == 0) {
+                    let x = -b1 / 2 * a1
+                    document.getElementById("print").innerHTML = "PT có nghiệm kép: " + x
+                } else if (delta < 0) {
+                    document.getElementById("print").innerHTML = "PT vô nghiệm"
+                } else {
+                    let x1 = (-b1 + Math.sqrt(delta)) / (2 * a1)
+                    let x2 = (-b1 - Math.sqrt(delta)) / (2 * a1)
+                    document.getElementById("print").innerHTML = "PT có hai nghiệm là: " + x1 + " và: " + x2
+                }
+            }
         }
-      } else {
-        let x = -c1 / b1
-        document.getElementById("print").innerHTML = "PT có một nghiệm: " + x
-      }
-    } else {
-
-      if (delta == 0) {
-        let x = -b1 / 2 * a1
-        document.getElementById("print").innerHTML = "PT có nghiệm kép: " + x
-      } else if (delta < 0) {
-        document.getElementById("print").innerHTML = "PT vô nghiệm"
-      } else {
-        let x1 = (-b1+Math.sqrt(delta))/(2*a1)
-        let x2 = (-b1-Math.sqrt(delta))/(2*a1)
-        document.getElementById("print").innerHTML = "PT có hai nghiệm là: " + x1+" và: "+x2
-      }
     }
-  }
 </script>
 </body>
 </html>

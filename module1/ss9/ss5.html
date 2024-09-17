@@ -1,16 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Diện tích tam giác vuông</title>
+    <meta charset="UTF-8">
+    <title>Diện tích tam giác vuông</title>
 </head>
 <h2>Diện tích tam giác vuông</h2>
 <body>
 <script>
-  let edges1 =prompt("nhập cạnh thứ nhất")
-  let edges2 =prompt("nhập cạnh thứ hai")
-  let area =(edges1*edges2)/2
-  alert("Diện tích tam giác cân là: "+area)
+    let edges1 = prompt("nhập cạnh thứ nhất")
+    let edges2 = prompt("nhập cạnh thứ hai")
+    if (edges1 <= 0 || edges2 <= 0 || isNaN(edges1) || isNaN(edges2)) {
+        alert("Nhập sai")
+    } else {
+        let area = (edges1 * edges2) / 2
+        alert("Diện tích tam giác cân là: " + area)
+    }
 </script>
 
 </body>

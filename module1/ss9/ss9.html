@@ -18,7 +18,7 @@
         let aCheck = parseFloat(document.getElementById("a").value)
         let bCheck = parseFloat(document.getElementById("b").value)
         let cCheck = parseFloat(document.getElementById("c").value)
-        if (aCheck == 0 || bCheck == 0 || cCheck == 0) {
+        if (aCheck <= 0 || bCheck <= 0 || cCheck <= 0 || isNaN(aCheck) || isNaN(bCheck) || isNaN(cCheck)) {
             document.getElementById("print").innerHTML = "Mời nhập lại"
         } else if (aCheck + bCheck > cCheck && aCheck + cCheck > bCheck && bCheck + cCheck > aCheck) {
             document.getElementById("print").innerHTML = aCheck + " và " + bCheck + " và " + cCheck + " là ba cạnh của một tam giác"

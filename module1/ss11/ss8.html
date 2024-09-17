@@ -7,10 +7,30 @@
 <body>
 <input type="button" onclick="game()" value="Bắt đầu chơi">
 <script>
-  function game(){
-    let number=prompt("Nhập khoảng số muốn đoán:")
-
-  }
+    function game() {
+        let number = prompt("Nhập khoảng số muốn đoán:")
+        let random = Math.floor(Math.random() * number + 1)
+        let choose = prompt("Đoán số từ 0-" + number)
+        let count = 0
+        while (count <= 2) {
+            if (choose == random) {
+                alert("Bạn đoán đúng số: " + random)
+                break;
+            } else if (choose > random) {
+                alert("Số bạn chọn lớn hơn")
+                count++
+            } else {
+                alert("Số bạn chọn bé hơn")
+                count++
+            }
+            choose = prompt("Xin đoán lại")
+        }
+        if (count > 2) {
+            alert("Het luot")
+        } else {
+            alert("Chúc mừng bạn")
+        }
+    }
 </script>
 </body>
 </html>

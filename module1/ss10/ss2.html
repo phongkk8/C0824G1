@@ -8,20 +8,20 @@
 <script>
     let number = prompt("Nhap so nguyen to dau tien can KTra")
     let count = 0;
-    let N = 2;
-    for (N; N/2 < 10000 && count < number; N++) {
-        let uocC = 0;
+    let numPrime = 2;
+    while (count < number) {
         let countUC = 0;
-        while (uocC <= N) {
-            if (N % uocC == 0) {
-                countUC ++
+        for (let i = 2; i <= Math.sqrt(numPrime); i++) {
+            if (numPrime % i === 0) {
+                countUC++
+                break;
             }
-            uocC += 1;
         }
-        if (countUC == 2) {
-            document.write(N + "<br>");
-            count += 1;
+        if (countUC === 0) {
+            document.write(numPrime + "<br>");
+            count++;
         }
+        numPrime++;
     }
 </script>
 </body>

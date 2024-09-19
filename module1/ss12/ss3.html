@@ -6,16 +6,33 @@
 </head>
 <body>
 <script>
-    for (let i = 1; i <= 5; i++) {
-        document.write("*")
+    let star = "*";
+    let space = "&#8192";
+    let tamgiac = "";
+    for (let a = 1; a <= 5; a++) {
+        tamgiac += star.repeat(a);
+        tamgiac += space.repeat(5 - a);
+        tamgiac += "<br>";
     }
 
+    for (let b = 5; b >= 1; b--) {
+        tamgiac += star.repeat(b);
+        tamgiac += space.repeat(5 - b);
+        tamgiac += "<br>";
+    }
 
-  //  for (let j = 5; j >= 1; j--) {
-   //     document.write('*'.repeat(j) + "<br>");
-   // }
+    for (let c = 1; c <= 5; c++) {
+        tamgiac += space.repeat(5 - c);
+        tamgiac += star.repeat(c);
+        tamgiac += "<br>";
+    }
 
-   // for ()
+    for (let d = 5; d >= 1; d--) {
+        tamgiac += space.repeat(5 - d);
+        tamgiac += star.repeat(d);
+        tamgiac += "<br>";
+    }
+    document.write(tamgiac);
 </script>
 </body>
 </html>

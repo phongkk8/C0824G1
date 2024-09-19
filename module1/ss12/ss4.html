@@ -1,10 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>Hình chữ nhật</title>
 </head>
 <body>
-$END$
+<script>
+    let stars = "*";
+    let space = "&#8192";
+    for (let i = 0; i <= 7; i++) {
+        for (let j = 0; j <= 25; j++) {
+            if (i == 0 || i == 7 || j == 0 || j == 25) {
+                document.write(stars);
+            } else {
+                document.write(space);
+            }
+        }
+        document.write("<br>");
+    }
+</script>
 </body>
 </html>

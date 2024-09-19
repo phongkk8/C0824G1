@@ -1,10 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>giai thừa của một số</title>
 </head>
 <body>
-$END$
+<script>
+    let number = prompt("Nhập một số nguyên: ")
+    if (number < 0 || isNaN(number)) {
+        document.write("Nhập sai")
+    } else if (number == 0) {
+        document.write("Giai thừa của 0 = 0")
+    } else if (number == 1) {
+        document.write("Giai thừa của 1 = 1")
+    } else {
+        let factorial = 1
+        for (let i = 2; i <= number; i++) {
+            factorial *= i
+        }
+        document.write("Giai thừa của số " + number + " là " + factorial)
+    }
+</script>
+
 </body>
 </html>

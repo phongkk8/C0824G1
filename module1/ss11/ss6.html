@@ -7,12 +7,12 @@
 <body>
 <script>
     let total = 0
-    let num = 0
-    for (let count = 0; count <= 100000 && num <30; count++) {
-        if (count % 7 == 0) {
-            total += count
-            num++
-            document.write(count + "<br>")
+    let count = 0
+    for (let number = 0; number <= 100000 && count < 30; number++) {
+        if (number % 7 == 0) {
+            total += number
+            count++
+            document.write(number + "<br>")
         }
     }
     document.write("Tổng các số chia hết cho 7 là: " + total)

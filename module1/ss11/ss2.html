@@ -7,17 +7,19 @@
 <body>
 <script>
     let c = prompt("Mời nhập nhiệt độ")
-    while (isNaN(c)) {
-        c = prompt("nhập lại: " + c)
+    while (isNaN(c) || c > 100 || c < 0) {
+        if (c > 10) {
+            alert("Giam nhiệt độ")
+            c = prompt("nhập lại: ")
+        }
+        if (c < 0) {
+            alert("Tăng nhiệt độ")
+            c = prompt("nhập lại: ")
+        } else {
+            alert("OK")
+        }
     }
-    if (c > 100) {
-        c = prompt("Giảm nhiệt độ xuống")
-    }
-    if (c < 0) {
-        c = prompt("Tăng nhiệt độ lên")
-    } else {
-        alert("OK")
-    }
+    alert("OK")
 </script>
 </body>
 </html>

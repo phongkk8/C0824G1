@@ -1,10 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>số lớn hơn = 10</title>
 </head>
 <body>
-$END$
+<script>
+    let array = [];
+    for (let i = 0; i < 10; i++) {
+        let numberInt = +prompt("Mời nhập số thứ " + (i + 1));
+        do {
+            if (isNaN(numberInt)) {
+                numberInt = +prompt("Xin nhập số " + (i + 1));
+            } else if (!Number.isInteger(numberInt)) {
+                numberInt = +prompt("Xin nhập số nguyên " + (i + 1));
+            }
+        }
+        while (isNaN(numberInt) || !Number.isInteger(numberInt))
+        {
+            array.push(numberInt);
+        }
+    }
+    document.write("Mảng vừa nhập gồm các số: " + array + "<br>");
+    let count = 0;
+    for (let j = 0; j < array.length; j++) {
+        if (array[j] >= 10) {
+            count++;
+        }
+    }
+    alert("Có " + count + " số lớn hơn hoặc bằng 10.");
+</script>
 </body>
 </html>

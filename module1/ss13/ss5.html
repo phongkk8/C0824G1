@@ -1,10 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>Số nguyên âm</title>
 </head>
 <body>
-$END$
+<script>
+    let array = [];
+    let count;
+    do {
+        count = parseInt(prompt("Số lượng phần tử (>0):"));
+    } while (isNaN(count) || count <= 0)
+    for (let i = 0; i < count; i++) {
+        let numberInt = parseFloat(prompt("Mời nhập số thứ " + (i + 1)));
+        do {
+            if (isNaN(numberInt)) {
+                numberInt = parseFloat(prompt("Xin nhập số " + (i + 1)));
+            } else if (!Number.isInteger(numberInt)) {
+                numberInt = parseFloat(prompt("Xin nhập số nguyên " + (i + 1)));
+            }
+        }
+        while (isNaN(numberInt) || !Number.isInteger(numberInt))
+        {
+            array.push(numberInt);
+        }
+    }
+    document.write("Mảng vừa nhập gồm các số: " + array + "<br>");
+    let countNumber=0;
+    for(let j=0;j<array.length;j++){
+        if(array[j]<0){
+            countNumber++;
+        }
+    }
+    document.write("Mảng có "+countNumber+ "số nguyên âm");
+</script>
 </body>
 </html>

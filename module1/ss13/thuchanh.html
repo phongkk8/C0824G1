@@ -1,10 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>Title</title>
 </head>
 <body>
-$END$
+<input type="text" id="txtIn">
+<input type="button" id="buttonAdd" value="Add" onclick="add_toArray()"/>
+<input type="button" id="buttonDisplay" value="Display" onclick="display_Array()"/>
+<p id="result"></p>
+<script>
+    let x = 0;
+    let array = Array();
+
+    function add_toArray() {
+        array[x] = document.getElementById("txtIn").value;
+        alert("Element: " + array[x] + "add to index " + x);
+        x++;
+        document.getElementById("txtIn").value = "";
+    }
+
+    function display_Array() {
+        let e = "<hr/>";
+        for (let i = 0; i < array.length; i++) {
+            e += "Element " + i + " = " + array[i] + "<br/>";
+        }
+        document.getElementById("result").innerHTML = e;
+    }
+</script>
 </body>
 </html>

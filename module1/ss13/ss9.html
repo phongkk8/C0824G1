@@ -1,10 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>nối mảng</title>
 </head>
 <body>
-$END$
+<script>
+    let a = [];
+    let b = [];
+    for (let i = 0; i < 10; i++) {
+        let numberInt = +prompt("Mời nhập số thứ " + (i + 1));
+        do {
+            if (isNaN(numberInt) || !Number.isInteger(numberInt)) {
+                numberInt = +prompt("Nhập lại  " + (i + 1));
+            }
+        }
+        while (isNaN(numberInt) || !Number.isInteger(numberInt))
+        {
+            a.push(numberInt);
+        }
+    }
+    document.write("Mảng a: " + a + "<br>");
+    for (let j = 0; j < 10; j++) {
+        let numberInt = +prompt("Mời nhập số thứ " + (j + 1));
+        do {
+            if (isNaN(numberInt) || !Number.isInteger(numberInt)) {
+                numberInt = +prompt("Nhập lại  " + (j + 1));
+            }
+        }
+        while (isNaN(numberInt) || !Number.isInteger(numberInt))
+        {
+            b.push(numberInt);
+        }
+    }
+    document.write("Mảng b: " + b + "<br>");
+    //let c=[];
+    c=[a.concat(b)];
+    document.write("Mảng sau khi nối: "+c);
+</script>
 </body>
 </html>

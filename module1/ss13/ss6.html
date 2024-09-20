@@ -1,10 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>tìm số</title>
 </head>
 <body>
-$END$
+<script>
+    let array = [];
+    for (let i = 0; i < 10; i++) {
+        let numberInt = parseFloat(prompt("Mời nhập số thứ " + (i + 1)));
+        do {
+            if (isNaN(numberInt)) {
+                numberInt = parseFloat(prompt("Xin nhập số " + (i + 1)));
+            } else if (!Number.isInteger(numberInt)) {
+                numberInt = parseFloat(prompt("Xin nhập số nguyên " + (i + 1)));
+            }
+        }
+        while (isNaN(numberInt) || !Number.isInteger(numberInt))
+        {
+            array.push(numberInt);
+        }
+    }
+    let numberSearch = parseInt(prompt("Nhập số cần tìm"));
+    let j = 0;
+    while (j < array.length) {
+        if (numberSearch === array[j]) {
+            document.write(numberSearch + " is in the array");
+            break;
+        } else {
+            j++;
+        }
+    }
+    if (array[j]!==numberSearch){
+        document.write(numberSearch + " is not in the array");
+    }
+</script>
 </body>
 </html>

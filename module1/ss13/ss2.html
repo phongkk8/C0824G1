@@ -1,10 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>Max array</title>
 </head>
 <body>
-$END$
+<script>
+    let array = [];
+    for (let i = 0; i < 10; i++) {
+        let numberInt = +prompt("Mời nhập số thứ " + (i + 1));
+        do {
+            if (isNaN(numberInt)) {
+                numberInt = +prompt("Xin nhập số " + (i + 1));
+            } else if (!Number.isInteger(numberInt)) {
+                numberInt = +prompt("Xin nhập số nguyên " + (i + 1));
+            }
+        }
+        while (isNaN(numberInt) || !Number.isInteger(numberInt))
+       // if (numberInt === array[10 - i]) {
+       //     numberInt = +prompt("Số bị trùng. Nhập lại: ");}
+
+        {
+            array.push(numberInt);
+        }
+    }
+    document.write("Mảng vừa nhập gồm các số: " + array + "<br>");
+    let max = array[0];
+    let jMax = 0;
+    for (let j = 1; j < array.length; j++) {
+        if (array[j] > max) {
+            max = array[j];
+            jMax = j;
+        }
+    }
+    document.write("Số lớn nhất là: " + max + " ở vị trí " + (jMax + 1));
+</script>
 </body>
 </html>

@@ -1,10 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>xóa số khỏi mảng</title>
 </head>
 <body>
-$END$
+<script>
+    let array = [];
+    for (let i = 0; i < 10; i++) {
+        let numberInt = +prompt("Mời nhập số thứ " + (i + 1));
+        do {
+            if (isNaN(numberInt)) {
+                numberInt = +prompt("Xin nhập số " + (i + 1));
+            } else if (!Number.isInteger(numberInt)) {
+                numberInt = +prompt("Xin nhập số nguyên " + (i + 1));
+            } else if (numberInt === array[i]) {
+                numberInt = +prompt("Trùng số. Nhập lại");
+            }
+        }
+        while (isNaN(numberInt) || !Number.isInteger(numberInt))
+        {
+            array.push(numberInt);
+        }
+    }
+    document.write("Mảng vừa nhập gồm các số: " + array + "<br>");
+    let numberSearch = parseInt(prompt("Nhập số cần tìm"));
+    let j = 0;
+    while (j < array.length) {
+        if (numberSearch === array[j]) {
+            array.splice(j, 1);
+        } else {
+            j++;
+        }
+    }
+    document.write("Mảng sau khi xóa số "+numberSearch+" : " + array);
+
+
+</script>
 </body>
 </html>

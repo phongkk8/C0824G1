@@ -1,10 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>in ra chuỗi</title>
 </head>
 <body>
-$END$
+<script>
+    let array = ["t", "8", "g", "n", "o", "h", "p"];
+    console.log(typeof array);
+    let first = 0;
+    let last = array.length - 1;
+    while (first < last) {
+        let a = array[first];
+        array[first] = array[last];
+        array[last] = a;
+        first++;
+        last--;
+    }
+    document.write("Kết quả: " + array.join(""));
+</script>
 </body>
 </html>

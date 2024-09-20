@@ -1,10 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>Đảo ngược chuỗi</title>
 </head>
 <body>
-$END$
+<script>
+    let array = [];
+    let count;
+    do {
+        count = +(prompt("Số lượng phần tử (>0):"));
+    } while (isNaN(count) || count <= 0)
+    for (let i = 0; i < count; i++) {
+        let numberInt = +prompt("Mời nhập số thứ " + (i + 1));
+        do {
+            if (isNaN(numberInt)) {
+                numberInt = +prompt("Xin nhập số " + (i + 1));
+            } else if (!Number.isInteger(numberInt)) {
+                numberInt = +prompt("Xin nhập số nguyên " + (i + 1));
+            }
+        }
+        while (isNaN(numberInt) || !Number.isInteger(numberInt))
+        {
+            array.push(numberInt);
+        }
+    }
+    document.write("Mảng vừa nhập gồm các số: " + array + "<br>");
+    let first = 0;
+    let last = array.length - 1;
+    while (first < last) {
+        let a = array[first];
+        array[first] = array[last];
+        array[last] = a;
+        first++;
+        last--;
+    }
+    document.write("Chuỗi sau khi đảo ngược: " + array);
+</script>
 </body>
 </html>

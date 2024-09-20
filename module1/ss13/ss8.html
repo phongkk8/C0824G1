@@ -1,10 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>sắp xếp</title>
 </head>
 <body>
-$END$
+<script>
+    let array = [];
+    for (let i = 0; i < 10; i++) {
+        let numberInt = +prompt("Mời nhập số thứ " + (i + 1));
+        do {
+            if (isNaN(numberInt)) {
+                numberInt = +prompt("Xin nhập số " + (i + 1));
+            } else if (!Number.isInteger(numberInt)) {
+                numberInt = +prompt("Xin nhập số nguyên " + (i + 1));
+            }
+        }
+        while (isNaN(numberInt) || !Number.isInteger(numberInt))
+        {
+            array.push(numberInt);
+        }
+    }
+    document.write("Mảng vừa nhập gồm các số: " + array + "<br>");
+    array.sort(function (a, b) {
+        return b - a;
+    });
+    document.write("Mảng sau khi sắp xếp: "+array);
+</script>
 </body>
 </html>

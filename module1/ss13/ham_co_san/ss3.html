@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>In chữ hoa</title>
+</head>
+<body>
+<script>
+    let stringIn = prompt("Nhập chuỗi ABcd: ");
+    let result = [];
+    let alphabetUpper = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    let alphabetLOWER = "abcdefghijklmnopqrstuvwxyz";
+    for (let i = 0; i < stringIn.length; i++) {
+        if (alphabetUpper.indexOf(stringIn[i]) !== -1) {
+            result.push(stringIn[i].toLowerCase());
+        } else if (alphabetLOWER.indexOf(stringIn[i]) !== -1) {
+            result.push(stringIn[i].toUpperCase());
+        } else {
+            result.push(stringIn[i]);
+        }
+    }
+    document.write(result.join(""));
+</script>
+</body>
+</html>

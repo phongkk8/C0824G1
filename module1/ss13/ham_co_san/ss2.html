@@ -1,10 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>Title</title>
 </head>
 <body>
-$END$
+<script>
+    let number = prompt("Nhập 1 dãy số");
+    let numberIn = number.split("");
+    let addString = "";
+    for (let i = 0; i < numberIn.length; i++) {
+        if (numberIn[i] % 2 == 0 && numberIn[i - 1] % 2 == 0) {
+            addString += "-";
+        }
+        addString += numberIn[i];
+    }
+    document.write(addString);
+</script>
 </body>
 </html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>thay thế trong mảng</title>
+</head>
+<body>
+<script>
+    let array = [];
+    for (i = 0; i < 5; i++) {
+       let symbol = prompt("Nhập vào ký tự thứ: " + (i + 1));
+        array.push(symbol);
+    }
+    document.write("Mảng vừa nhập gồm các ký tự: " + array + "<br>");
+    for( let j=0;j<array.length;j++){
+        if(array[j]==="-"){
+            array[j]="_";
+        }
+    }
+    document.write("Mảng sau khi thay thế: "+array);
+</script>
+</body>
+</html>

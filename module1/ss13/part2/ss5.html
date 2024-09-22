@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>kiểm tra 2 chuỗi</title>
+</head>
+<body>
+<form>
+    <input type="text" id="string1" placeholder="Nhập chuỗi 1"><br>
+    <input type="text" id="string2" placeholder="Nhập chuỗi 2"><br>
+    <input type="button" onclick="check()" value="Kiểm tra"><br>
+</form>
+<script>
+    function check() {
+        let stringCheck1 = document.getElementById("string1").value;
+        let stringCheck2 = document.getElementById("string2").value;
+        document.write("Chuỗi thứ nhất: " + stringCheck1 + "<br>");
+        document.write("Chuỗi thứ hai: " + stringCheck2);
+        if (stringCheck1 === stringCheck2) {
+            alert("Hai chuỗi giống nhau")
+        } else {
+            alert("Hai chuỗi khác nhau")
+        }
+    }
+</script>
+</body>
+</html>

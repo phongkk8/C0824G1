@@ -7,7 +7,7 @@
 <body>
 <script>
     let array = ["t", "8", "g", "n", "o", "h", "p"];
-    console.log(typeof array);
+    document.write("Mảng ban đầu: "+array+"<br>");
     let first = 0;
     let last = array.length - 1;
     while (first < last) {
@@ -17,7 +17,7 @@
         first++;
         last--;
     }
-    document.write("Kết quả: " + array.join(""));
+    document.write("Kết quả sau khi đảo ngược: " + array.join(""));
 </script>
 </body>
 </html>

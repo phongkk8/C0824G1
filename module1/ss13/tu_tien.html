@@ -12,11 +12,16 @@
         let animals = document.getElementById("input").value;
         let english = ["dog", "cat", "chicken", "shark"];
         let vietnamese = ["con chó", "con mèo", "con gà", "cá mập"];
+        let found = false;
         for (let i = 0; i < english.length; i++) {
             if (animals === english[i]) {
                 alert(vietnamese[i]);
+                found = true;
                 break;
             }
+        }
+        if (!found) {
+            alert("Không tìm thấy thông tin");
         }
     }
 </script>

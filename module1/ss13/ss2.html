@@ -14,12 +14,11 @@
                 numberInt = +prompt("Xin nhập số " + (i + 1));
             } else if (!Number.isInteger(numberInt)) {
                 numberInt = +prompt("Xin nhập số nguyên " + (i + 1));
+            } else if (array.indexOf(numberInt) !== -1) {
+                numberInt = +prompt("Trùng số, nhập số khác: ");
             }
         }
-        while (isNaN(numberInt) || !Number.isInteger(numberInt))
-       // if (numberInt === array[10 - i]) {
-       //     numberInt = +prompt("Số bị trùng. Nhập lại: ");}
-
+        while (isNaN(numberInt) || !Number.isInteger(numberInt) || array.indexOf(numberInt) !== -1);
         {
             array.push(numberInt);
         }

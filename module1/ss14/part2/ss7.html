@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>đổi chỗ</title>
+</head>
+<body>
+<script>
+    function swap(a, b) {
+        let c = a;
+        a = b;
+        b = c;
+        return a + "_" + b;
+    }
+
+    let num1 = +prompt("nhập số thứ nhất:");
+    let num2 = +prompt("nhập số thứ hai:");
+    document.write("kết quả sau đổi số: " + num1 + " và " + num2 + " là: " + swap(num1, num2));
+</script>
+</body>
+</html>

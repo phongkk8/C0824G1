@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>kiểm tra ký tự</title>
+</head>
+<body>
+<script>
+    function aadCharacter(character) {
+        let array = [];
+        for (let i = 0; i < 10; i++) {
+            character = prompt("Mời nhập các ký tự thứ "+(i+1));
+            array.push(character);
+        }
+        return array;
+    }
+    function check(char, array) {
+        let count = 0;
+        for (let element of array) {
+            if (element === char) {
+                count++;
+            }
+        }
+        if (count === 0) {
+            return -1;
+        } else {
+            return "Ký tự " + char + " xuất hiện " + count + " lần"
+        }
+    }
+    let inputCharacter = aadCharacter();
+    document.write("Mảng gồm ký tự: " + inputCharacter + "<br>");
+    let checkChar = prompt("Nhập ký tự cần kiểm tra");
+    let checkIn = check(checkChar, inputCharacter);
+    document.write(checkin);
+</script>
+</body>
+</html>

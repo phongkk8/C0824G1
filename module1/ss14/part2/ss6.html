@@ -1,10 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>ktra số nguyên dương</title>
 </head>
 <body>
-$END$
+<script>
+    function check(number) {
+        if (Number.isInteger(number) && !isNaN(number)) {
+            if (number > 0) {
+                return true;
+            } else {
+                return false;
+            }
+        } else {
+            alert("Nhập sai!!!");
+        }
+    }
+
+    let input = +prompt("Nhập số nguyên để kiểm tra: ");
+    alert(check(input));
+</script>
+
 </body>
 </html>

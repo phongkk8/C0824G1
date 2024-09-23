@@ -1,10 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>Tính C, S hình tròn</title>
 </head>
 <body>
-$END$
+<script>
+    function dientich(r) {
+        return r * r * 3.14;
+    }
+
+    function chuvi(r) {
+        return r * 2 * 3.14;
+    }
+
+    let input = +prompt("Nhập vào bán kính hình tròn: ");
+    alert("Diện tích là: " + dientich(input));
+    alert("Chu vi là: " + chuvi(input));
+</script>
+
 </body>
 </html>

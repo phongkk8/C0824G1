@@ -1,10 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>kiểm tra ký tự</title>
 </head>
 <body>
-$END$
+<script>
+    function check(symbol) {
+        if (isFinite(symbol)) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    let input = +prompt("Nhập ký tự bất kỳ để KTRa: ");
+    alert(check(input));
+</script>
 </body>
 </html>

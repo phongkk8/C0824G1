@@ -1,10 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>Số nguyên tố</title>
 </head>
 <body>
-$END$
+<script>
+    function isPrime(number) {
+        for (let i = 2; i <= Math.sqrt(number); i++) {
+            if (number % i === 0) {
+                return false;
+            }
+        }
+        return true;
+    }
+    let numberCheck = +prompt("Nhập số số nguyên từ 2-10000");
+    if (isPrime(numberCheck)===true) {
+        alert(numberCheck + " là số nguyên tố");
+    } else {
+        alert(numberCheck + " không phải số nguyên tố");
+    }
+</script>
 </body>
 </html>

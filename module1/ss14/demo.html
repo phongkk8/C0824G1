@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function checkBeginEnd(string) {
+        for (i = 0; i < string.length; i++) {
+            if (string.charAt(0) === string.charAt(string.length - 1)) {
+                return true;
+            } else return false;
+        }
+    }
+
+    let str = prompt("nhap chuoi")
+    document.write(isPalindrome(str));
+</script>
+</body>
+</html>

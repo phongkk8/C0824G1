@@ -17,9 +17,18 @@
         return min;
     }
 
-    let num1 = +prompt("nhập số thứ nhất: ");
-    let num2 = +prompt("nhập số thứ hai: ");
-    let num3 = +prompt("nhập số thứ ba: ");
+    function checkNumber(d) {
+        do {
+            if (isNaN(d) || !Number.isInteger(d)) {
+                d = +prompt("Số vừa nhập phải là số và là số nguyên")
+            }
+        } while (isNaN(d) || !Number.isInteger(d))
+        return d;
+    }
+
+    let num1 = checkNumber(+prompt("nhập số thứ nhất: "));
+    let num2 = checkNumber(+prompt("nhập số thứ hai: "));
+    let num3 = checkNumber(+prompt("nhập số thứ ba: "));
     alert("Số nhỏ nhất là: " + check(num1, num2, num3));
 </script>
 </body>

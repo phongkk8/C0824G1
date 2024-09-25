@@ -14,8 +14,20 @@
         return factorial;
     }
 
-    let number = +prompt("Nhập một số cần tính giai thừa: ");
-    alert("Giai thừa của số " + number + " là " + calculator(number));
+    function check(number) {
+        do {
+            if (number < 0) {
+                number = +prompt("Xin nhập số nguyên dương")
+
+            } else if (isNaN(number)) {
+                number = +prompt("Xin nhập số:")
+            }
+        } while (number < 0 || isNaN(number))
+        return number;
+    }
+    let numberInput = check(+prompt("Nhập một số cần tính giai thừa: "));
+    alert("Giai thừa của số " + numberInput + " là " + calculator(numberInput));
+
 </script>
 </body>
 </html>

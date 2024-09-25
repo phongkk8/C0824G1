@@ -7,18 +7,22 @@
 <body>
 <script>
     function check(number) {
-        if (Number.isInteger(number) && !isNaN(number)) {
-            if (number > 0) {
-                return true;
-            } else {
-                return false;
-            }
+        if (number > 0) {
+            return true;
         } else {
-            alert("Nhập sai!!!");
+            return false;
         }
     }
 
+    function checkInput(number) {
+        while (!Number.isInteger(number) && isNaN(number)) {
+            number = +prompt("xin nhập số và là số nguyên:")
+        }
+        return number
+    }
+
     let input = +prompt("Nhập số nguyên để kiểm tra: ");
+    checkInput(input);
     alert(check(input));
 </script>
 

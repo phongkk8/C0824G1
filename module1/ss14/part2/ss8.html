@@ -6,23 +6,20 @@
 </head>
 <body>
 <script>
-    function addArray(number) {
+    function addArray() {
         let array = [];
         for (let i = 0; i < 10; i++) {
             number = +prompt("Mời nhập số thứ " + (i + 1));
             do {
                 if (isNaN(number)) {
-                    number = +prompt("Xin nhập số " + (i + 1));
+                    number = +prompt("Xin nhập ký tự số: " + (i + 1));
                 } else if (!Number.isInteger(number)) {
                     number = +prompt("Xin nhập số nguyên " + (i + 1));
                 } else if (array.indexOf(number) !== -1) {
                     number = +prompt("Trùng số, nhập số khác: ");
                 }
-            }
-            while (isNaN(number) || !Number.isInteger(number) || array.indexOf(number) !== -1);
-            {
-                array.push(number);
-            }
+            } while (isNaN(number) || !Number.isInteger(number) || array.indexOf(number) !== -1);
+            array.push(number);
         }
         return array;
     }

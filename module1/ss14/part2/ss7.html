@@ -7,14 +7,22 @@
 <body>
 <script>
     function swap(a, b) {
-        let c = a;
-        a = b;
-        b = c;
-        return a + "_" + b;
+        let arr = [a, b]
+        arr.reverse()
+        return arr;
     }
 
-    let num1 = +prompt("nhập số thứ nhất:");
-    let num2 = +prompt("nhập số thứ hai:");
+    function checkNumber(d) {
+        do {
+            if (isNaN(d) || !Number.isInteger(d)) {
+                d = +prompt("Số vừa nhập phải là số và là số nguyên")
+            }
+        } while (isNaN(d) || !Number.isInteger(d))
+        return d;
+    }
+
+    let num1 = checkNumber(+prompt("nhập số thứ nhất:"));
+    let num2 = checkNumber(+prompt("nhập số thứ hai:"));
     document.write("kết quả sau đổi số: " + num1 + " và " + num2 + " là: " + swap(num1, num2));
 </script>
 </body>

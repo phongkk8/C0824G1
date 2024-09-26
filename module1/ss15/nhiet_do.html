@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>chuyển đổi nhiệt độ</title>
+</head>
+<body>
+<script>
+    class Temperature {
+        value;
+
+        constructor(value) {
+            this.value=value;
+        }
+
+        displayCtoF() {
+            let f =  `Độ F là: ${this.value * 1.8 + 32}`
+            return f;
+        }
+
+        displayCtoK() {
+            let k = `Độ K là: ${this.value + 273.15}`
+            return k;
+        }
+    }
+
+    function checkInput(index) {
+        while (isNaN(index) || index < (-273)) {
+            index = +prompt("Nhiệt độ phải lớn hơn -273độ và là số")
+        }
+        return index
+    }
+
+    let input = checkInput(+prompt("Nhập nhiệt độ cần kiểm tra (độ C):"))
+    let temperature = new Temperature(input)
+    document.write(temperature.displayCtoF())
+    document.write(temperature.displayCtoK())
+</script>
+</body>
+</html>

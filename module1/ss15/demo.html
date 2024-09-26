@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    class Product {
+        code;
+        name;
+        price;
+        description;
+        size;
+        quantity;
+
+        constructor(code, name, price, description, size, quatity) {
+            this.code = code;
+            this.name = name;
+            this.price = price;
+            this.description = description;
+            this.size = size;
+            this.quantity = quatity;
+        }
+
+        displayInformation() {
+            let result = `Code: ${this.code}, tên: ${this.name}, giá: ${this.price}, Mô tả: ${this.description}, Size: ${this.size}, Số lượng:${this.quantity} `;
+            return result
+        }
+    }
+
+    let products = [];
+    let iphone16 = new Product(1, "Iphone 16 promax", "40.000.000 VNĐ", "vip", "6.9 inch", 100);
+    products.push(iphone16);
+    alert(iphone16.displayInformation())
+    //console.log(iphone16.name);
+
+    let ss24Ultra = new Product(2," Samsung s24 Ultra", "35.000.000 VNĐ", "vip","7 inch",250);
+    products.push(ss24Ultra);
+    //console.log(ss24Ultra.name)
+    alert(ss24Ultra.displayInformation())
+
+</script>
+</body>
+</html>

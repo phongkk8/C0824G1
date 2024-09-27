@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Adam & Eva</title>
+</head>
+<body>
+<script>
+    class Apple {
+        weight
+
+        constructor(weight) {
+            this.weight = weight;
+        }
+
+        getWeight() {
+            return this.weight
+        }
+
+        isEmpty() {
+            if (this.weight > 0) {
+                return false
+            } else return true
+        }
+
+        decreaseApple() {
+            if (this.weight > 0) {
+                this.weight--
+            }
+        }
+    }
+
+    class Human {
+        name;
+        gender;
+        weight;
+
+        constructor(name, gender, weight) {
+            this.name = name;
+            this.gender = gender;
+            this.weight = weight;
+        }
+
+        isMale() {
+            return this.gender
+        }
+
+        setGender(gender) {
+            this.gender = gender
+        }
+
+        checkApple(apple) {
+            return !apple.isEmpty()
+        }
+
+        eatApple(apple) {
+            if (this.checkApple(apple)) {
+                apple.decreaseApple()
+                this.weight--
+            } else alert("Hết táo")
+        }
+
+        say(string) {
+            alert(string)
+        }
+
+        getName() {
+            return this.name
+        }
+
+        setName(name) {
+            this.name = name
+        }
+
+        getWeight() {
+            return this.weight
+        }
+
+        setWeight(weight) {
+            this.weight = weight
+        }
+    }
+
+    let apple = new Apple(10);
+    let adam = new Human("Adam", true, 70);
+    let eva = new Human("Eva", false, 55);
+
+    adam.setWeight(77)
+    adam.setName("Adammm")
+    eva.setName("Evaaa")
+    eva.setWeight(52)
+
+    adam.say("Tôi là: " + adam.getName() + ", " + adam.isMale() + ", " + adam.getWeight())
+    eva.say("Tôi là: " + eva.getName() + ", " + eva.isMale() + ", " + eva.getWeight())
+
+
+    while (!apple.isEmpty()) {
+        document.write(adam.getName() + " ăn táo <br>")
+        adam.eatApple(apple)
+        document.write("Quả táo còn: " + apple.getWeight() + " đơn vị <br>")
+        document.write("Cận nặng của " + adam.getName() + " là: " + adam.getWeight() + " đơn vị <br>")
+
+        document.write(eva.getName() + " ăn táo <br>")
+        eva.eatApple(apple)
+        document.write("Quả táo còn: " + apple.getWeight() + " đơn vị <br>")
+        document.write("Cận nặng của " + eva.getName() + " là: " + eva.getWeight() + " đơn vị <br>")
+    }
+
+</script>
+</body>
+</html>

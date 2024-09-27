@@ -16,7 +16,11 @@
         getEnergy() {
             return this.energy
         }
-
+        outOfBattery(){
+            if(this.energy>0){
+                return false
+            }else return true
+        }
         decreaseEnergy() {
             if (this.energy > 0) {
                 this.energy--
@@ -26,9 +30,10 @@
 
     class FlashLamp {
         battery;
-
+        status;
         constructor(battery) {
             this.battery = battery;
+            this.status=false;
         }
 
         getBatteryInfo() {
@@ -42,21 +47,38 @@
         }
 
         turnOn() {
-            this.status = true;
+            if(this.checkBattery()){
+                this.status = true;
+                this.light()
+            }else alert("Hết pin không bật được: ")
+
 
         }
 
         turnOff() {
+            this.light()
             this.status = false;
+            battery.decreaseEnergy()
 
+        }
+        checkBattery(battery){
+            return !battery.outOfBattery()
         }
     }
 
-    let battery = new Battery(10);               //battery.energy();
+    let battery1 = new Battery(1);               //battery.energy();
 
-    let flashLamp = new FlashLamp(battery);             //flashLamp.battery();
+    let flashLamp = new FlashLamp(battery1);             //flashLamp.battery();
 
-    document.write("Thông tin của Pin: " + flashLamp.getBatteryInfo() + "<br>")
+
+    while (!battery1.outOfBattery()){
+        document.write("Pin còn: "+flashLamp.getBatteryInfo()+"<br>")
+        flashLamp.turnOn()
+        flashLamp.turnOff()
+        battery1.decreaseEnergy()
+        document.write("Pin còn: "+flashLamp.getBatteryInfo())
+
+        /* document.write("Thông tin của Pin: " + flashLamp.getBatteryInfo() + "<br>")
     flashLamp.light();
 
     document.write("Turn on<br/>");
@@ -66,7 +88,9 @@
 
     document.write("Turn off<br/>");
     flashLamp.turnOff();
-    flashLamp.light();
+    flashLamp.light();  */
+
+    }
 </script>
 </body>
 </html>

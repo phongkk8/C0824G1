@@ -47,13 +47,13 @@
         }
     }
 
-    let electricLamp1 = new ElectricLamp(false);
-    let switchButton1 = new SwitchButton(electricLamp1, false);
+    let electricLamp = new ElectricLamp(false);
+    let switchButton = new SwitchButton(electricLamp, false);
 
     for (let i = 0; i < 3; i++) {
-        switchButton1.connectToLamp(electricLamp1);
-        switchButton1.switchOn();
-        switchButton1.switchOff();
+        switchButton.connectToLamp(electricLamp);
+        switchButton.switchOn();
+        switchButton.switchOff();
     }
 </script>
 </body>

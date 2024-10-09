@@ -43,8 +43,7 @@ public class Number {
                     break;
             }
 
-        }
-        if (number > 10 && number <= 20) {
+        } else if (number > 10 && number <= 20) {
             switch (number) {
                 case 11:
                     System.out.println("eleven");
@@ -77,8 +76,7 @@ public class Number {
                     System.out.println("twenty");
                     break;
             }
-        }
-        if (number > 20 && number < 100) {
+        } else if (number > 20 && number < 100) {
             String numberString = String.valueOf(number);
             String number1 = "";
             String number2 = "";
@@ -142,8 +140,7 @@ public class Number {
                     break;
             }
             System.out.println(number1 + " " + number2);
-        }
-        if (number >= 100 && number < 1000) {
+        } else if (number >= 100 && number < 1000) {
             String numberString = String.valueOf(number);
             String number1 = "";
             String number2 = "";
@@ -180,7 +177,6 @@ public class Number {
                 System.out.println(number1);
             }
             if (numberString.charAt(1) == '0' && numberString.charAt(2) != '0') {
-                //   number1="";
                 switch (numberString.charAt(2)) {
                     case '1':
                         number3 = "one";

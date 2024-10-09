@@ -1,10 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>tích của chuỗi số</title>
 </head>
 <body>
-$END$
+<script>
+    function checkNum(num) {
+        while (isNaN(num) || !Number.isInteger(num) || num === 0) {
+            num = +prompt("Nhập sai!!! Xin nhập lại: ")
+        }
+        return num
+    }
+
+    function totalNumber(num) {
+        console.log('-----------',typeof num)
+        num = num;                     //Chuyển dãy số thành dạng chuỗi mới chuyển thành arr đc
+        let arr = num.split("")
+        let total = 0;
+        for (let element of arr) {
+            total += Number(element)
+        }
+        return total
+    }
+
+    function multiplicationNumber(num) {
+        console.log('-----------',typeof num)
+        num = num;                      //Chuyển dãy số thành dạng chuỗi mới chuyển thành arr đc
+        let arr = num.split("")
+        let mul = 1;
+        for (let element of arr) {
+            mul *= Number(element)
+        }
+        return mul
+    }
+
+    let input = checkNum(+prompt("Nhập một số: "))
+    document.write("Tổng các số trong chuỗi: " + totalNumber(input)+"<br>")
+    document.write("Tích các số trong chuỗi: " + multiplicationNumber(input))
+</script>
 </body>
 </html>

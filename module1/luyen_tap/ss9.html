@@ -1,10 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>ký tự thường và HOA</title>
 </head>
 <body>
-$END$
+<script>
+    // Nhập chuỗi từ người dùng
+   let inputString = prompt("Nhập vào một chuỗi ký tự:");
+
+    // Chia chuỗi thành các từ
+    const words = inputString.c(' ');
+
+    // In từng từ ra mỗi dòng
+    words.forEach(word => {
+        document.write(word+"<br>")
+    })
+</script>
 </body>
 </html>

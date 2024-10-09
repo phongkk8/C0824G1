@@ -1,10 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>Title</title>
 </head>
 <body>
-$END$
+<script>
+    function multiplicationOdd(num) {
+        let mul = 1;
+        for (let i = 1; i <= num; i += 2) {
+            mul *= i;
+        }
+        return mul;
+    }
+
+    function multiplicationEven(num) {
+        let mul = 1;
+        for (let i = 2; i <= num; i += 2) {
+            mul *= i;
+        }
+        return mul;
+    }
+
+    function evenOdd(index) {
+        if ((index % 2) === 0) {
+            return multiplicationEven(index)
+
+        } else {
+            return multiplicationOdd(index)
+
+        }
+
+    }
+
+    function checkNum(num) {
+        while (isNaN(num) || !Number.isInteger(num) || num === 0) {
+            num = +prompt("Nhập sai. Xin nhập lại!!! ")
+        }
+        return num
+    }
+
+    let input = checkNum(+prompt("Nhập số để tính:"));
+    document.write("Tích các số là: " + evenOdd(input))
+
+</script>
 </body>
 </html>

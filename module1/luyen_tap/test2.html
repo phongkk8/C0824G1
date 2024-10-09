@@ -1,10 +1,83 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>sử dụng hàm</title>
 </head>
 <body>
-$END$
+<script>
+  // cách dùng hàm filter để tìm trong mảng (Trả về mảng mới)
+
+  const users = [
+    { name: 'Alice', age: 25 },
+    { name: 'Bob', age: 30 },
+    { name: 'Charlie', age: 35 }
+  ];
+  const filteredUsers = users.filter(user => user.age > 28);
+  console.log(filteredUsers); // Kết quả: [{ name: 'Bob', age: 30 }, { name: 'Charlie', age: 35 }]
+
+  // cách dùng hàm forEach
+
+  const users = [
+    { name: 'Alice', age: 25 },
+    { name: 'Bob', age: 30 },
+    { name: 'Charlie', age: 35 }
+  ];
+  const filteredUsers = [];
+
+  users.forEach(user => {
+    if (user.age > 28) {
+      filteredUsers.push(user);
+    }
+  });
+  console.log(filteredUsers); // Kết quả: [{ name: 'Bob', age: 30 }, { name: 'Charlie', age: 35 }]
+
+  // VD2: key=word đại diện cho từng phần tử trong mảng words
+  const words = ['apple', 'is', 'banana', 'kiwi', 'grape'];
+  const longWords = [];
+
+  words.forEach(word => {
+    if (word.length > 3) {
+      longWords.push(word);
+    }
+  });
+
+  console.log(longWords); // Kết quả: ['apple', 'banana','kiwi', 'grape']
+
+  // Cách dùng hàm reduce:
+  //          array.reduce((accumulator, currentValue) => {
+  //          // logic
+  //          }, initialValue);
+  //         accumulator: Giá trị tích lũy trong mỗi lần lặp.
+  //         currentValue: Giá trị hiện tại trong mảng đang được xử lý.
+  //         initialValue: Giá trị khởi tạo cho accumulator (tùy chọn).
+
+  // 01.Tính các số trong mảng:
+
+  const numbers = [1, 2, 3, 4, 5];
+  const total = numbers.reduce((acc, current) => acc + current, 0);
+  console.log(total); // Kết quả: 15
+
+
+  // 1. Nhóm các đối tượng theo thuộc tính
+  const fruits = [
+    { name: 'apple', type: 'citrus' },
+    { name: 'orange', type: 'citrus' },
+    { name: 'banana', type: 'berry' },
+    { name: 'grape', type: 'berry' }
+  ];
+
+  const groupedFruits = fruits.reduce((acc, fruit) => {
+    if (!acc[fruit.type]) {
+      acc[fruit.type] = [];
+    }
+    acc[fruit.type].push(fruit.name);
+    return acc;
+  }, {});
+
+  console.log(groupedFruits);
+  // Kết quả: { citrus: ['apple', 'orange'], berry: ['banana', 'grape'] }
+
+</script>
 </body>
 </html>

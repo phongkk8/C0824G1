@@ -5,6 +5,93 @@
     <title>quản lý sản phẩm</title>
 </head>
 <body>
+<h2>Add New Product:</h2> <br>
+<input type="text" id="itemIn" placeholder="Product name" width="70px">
+<button onclick="addProduct()">Add</button>
+<h2>Display All Product:</h2>
+<div id="product"></div>
+<script>
+    let product = ["Sony Xperia", "Samsung galaxy"];
+    let data = "<table border='1px' width = '500px' height ='50px'>"
+    data += "<tr>"
+    for (j = 0; j < product.length; j++) {
+        data += "<td>"
+        data += product[j]
+        data += "</td>"
+        data += `<td style='text-align: center' onclick='editProduct(${j})'>`
+        data += "Edit"
+        data += "</td>"
+        data += `<td id='del' style='text-align: center' onclick='delProduct(${j})'>`
+        data += "Delete"
+        data += "</td>"
+        data += "</tr>"
+    }
+    data += "</table>"
+    document.getElementById("product").innerHTML = data;
 
+    function addProduct() {
+        let item = document.getElementById("itemIn").value;
+        product.push(item)
+        let data = "<table border='1px' width = '500px' height ='50px'>"
+        data += "<tr>"
+        for (j = 0; j < product.length; j++) {
+            data += "<td>"
+            data += product[j]
+            data += "</td>"
+            data += `<td style='text-align: center' onclick='editProduct(${j})'>`
+            data += "Edit"
+            data += "</td>"
+            data += `<td id='del' style='text-align: center' onclick='delProduct(${j})'>`
+            data += "Delete"
+            data += "</td>"
+            data += "</tr>"
+        }
+        data += "</table>"
+        document.getElementById("product").innerHTML = data;
+    }
+
+    function delProduct(x) {
+        product.splice(x, 1)
+        let data = "<table border='1px' width = '500px' height ='50px'>"
+        data += "<tr>"
+        for (j = 0; j < product.length; j++) {
+            data += "<td>"
+            data += product[j]
+            data += "</td>"
+            data += `<td style='text-align: center' onclick='editProduct(${j})'>`
+            data += "Edit"
+            data += "</td>"
+            data += `<td id='del' style='text-align: center' onclick='delProduct(${j})'>`
+            data += "Delete"
+            data += "</td>"
+            data += "</tr>"
+        }
+        data += "</table>"
+        document.getElementById("product").innerHTML = data;
+    }
+
+    function editProduct(y) {
+        let update = prompt("Nhâp tên SP muốn cập nhật:");
+        product[y] = update;
+        let data = "<table border='1px' width = '500px' height ='50px'>"
+        data += "<tr>"
+        for (j = 0; j < product.length; j++) {
+            data += "<td>"
+            data += product[j]
+            data += "</td>"
+            data += `<td style='text-align: center' onclick='editProduct(${j})'>`
+            data += "Edit"
+            data += "</td>"
+            data += `<td id='del' style='text-align: center' onclick='delProduct(${j})'>`
+            data += "Delete"
+            data += "</td>"
+            data += "</tr>"
+        }
+        data += "</table>"
+        document.getElementById("product").innerHTML = data;
+
+
+    }
+</script>
 </body>
 </html>

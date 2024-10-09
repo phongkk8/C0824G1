@@ -1,10 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>tìm UCLN và BCNN</title>
 </head>
 <body>
-$END$
+<script>
+    // Viết hàm tính UCLN và BCNN của 2 số
+
+
+    function commonDivisor(a, b) {
+        if (a === 1 || b === 1) {
+            return 1
+        } else {
+            if (a > b) {
+                while (b !== 0) {
+                    let mod = a % b
+                    a = b
+                    b = mod
+                }
+                return a
+            }
+            if (a < b) {
+                while (a !== 0) {
+                    let mod = b % a
+                    b = a
+                    a = mod
+                }
+                return b
+
+            }
+        }
+    }
+
+    function commonMultipleSmallest(a, b) {
+        let c = commonDivisor(a, b)
+        return (a * b) / c
+    }
+
+    function checkNum(num) {
+        while (isNaN(num) || !Number.isInteger(num) || num === 0) {
+            num = +prompt("Nhập sai!!! Xin nhập lại: ")
+        }
+        return num
+    }
+
+        let input1 = checkNum(+prompt("Nhập vào một số: "))
+        let input2 = checkNum(+prompt("Nhập vào một số: "))
+
+        document.write("UCLN của: "+input1+" và "+input2+" là "+commonDivisor(input1, input2) + "<br>")
+        document.write("BCNN của: "+input1+" và "+input2+" là "+commonMultipleSmallest(input1, input2) + "<br>")
+
+</script>
 </body>
 </html>

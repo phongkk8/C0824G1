@@ -1,10 +1,69 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="vi">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ôn tập</title>
 </head>
 <body>
-$END$
+<a href="https://www.facebook.com/phong8/">Trang cá nhân của tôi</a>
+<p>
+    Trong lập trình, <dfn>biến</dfn> là một vùng nhớ được đặt tên, dùng để lưu trữ dữ liệu.
+</p>
+<p>
+    Khi một <dfn>hàm</dfn> được gọi, nó thực hiện một khối mã cụ thể.
+</p>
+<table cellpadding="20" border="5" cellspacing="0">
+    <tr>
+        <td>Nội dung ô 1</td>
+        <td>Nội dung ô 2</td>
+    </tr>
+</table>
+
+<dl>                                            <!--Danh sách định nghĩa-->
+    <dt>Thuật ngữ 1</dt>
+    <dd>Định nghĩa của thuật ngữ 1.</dd>
+    <dd>Định nghĩa của thuật ngữ 2.</dd>
+    <dt>Thuật ngữ 2</dt>
+    <dd>Định nghĩa của thuật ngữ 2.</dd>
+</dl>
+
+<ul>                                             <!-- Danh sách không có thứ tự-->
+    <li>Mục 1</li>
+    <li>Mục 2</li>
+    <li>Mục 3</li>
+</ul>
+
+<ol>                                               <!-- Danh sách có thứ tự-->
+    <li>Mục 1</li>
+    <li>Mục 2</li>
+    <li>Mục 3</li>
+</ol>
+
+<h1>Danh sách có thứ tự bắt đầu từ C</h1>
+<ol type="A" start="3">
+    <li>Mục C</li>
+    <li>Mục D</li>
+    <li>Mục E</li>
+</ol>
+
+<script>
+
+    let n = 5; // Chiều cao của tam giác vuông
+
+    for (let i = 1; i <= n; i++) {
+        let row = ''; // Khởi tạo chuỗi rỗng cho mỗi dòng
+        for (let j = 1; j <= i; j++) {
+            row += '* '; // Thêm dấu * vào dòng
+        }
+        document.write(row + "<br>"); // In ra dòng
+    }
+
+    let arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 24]
+    let arrOdd =arr.filter(num=>num%2===0);
+    document.write(arrOdd)
+
+
+</script>
 </body>
 </html>

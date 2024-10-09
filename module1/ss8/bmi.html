@@ -7,27 +7,28 @@
 <h2>Chỉ số cơ thể</h2>
 <body>
 <form>
-  <p>Nhập cân nặng:</p>
-  <input id="weight" type="number" placeholder="Nhập cân nặng (kg)"> <br>
-  <p>Nhập chiều cao:</p>
-  <input id="height" type="number" placeholder="Nhập chiều cao(m)"> <br>
-  <input type="button" onclick="checkBmi()" value="Kiểm tra">
-  <p id="print"></p>
+    <p>Nhập cân nặng:</p>
+    <input id="weight" type="number" placeholder="Nhập cân nặng (kg)"> <br>
+    <p>Nhập chiều cao:</p>
+    <input id="height" type="number" placeholder="Nhập chiều cao(m)"> <br>
+    <input type="button" onclick="checkBmi()" value="Kiểm tra">
+    <p id="print"></p>
 </form>
 <script>
-  function checkBmi(){
-               let weight1 = parseFloat(document.getElementById("weight").value);
-               let height1 = parseFloat(document.getElementById("height").value);
-               let bmi = weight1 / (height1^2)
-    if (bmi < 18){
-       document.getElementById("print").innerHTML= "Underweight. BMI:"+bmi;}
-      else if (bmi < 25.0){
-               document.getElementById("print").innerHTML= "Normal. BMI:"+bmi;}
-           else if (bmi < 30.0){
-                   document.getElementById("print").innerHTML= "Overweight. BMI:"+bmi;}
-                else {
-                      document.getElementById("print").innerHTML= "Obese. BMI"+bmi;}
-  }
+    function checkBmi() {
+        let weight1 = parseFloat(document.getElementById("weight").value);
+        let height1 = parseFloat(document.getElementById("height").value);
+        let bmi = weight1 / (height1 ^ 2)
+        if (bmi < 18) {
+            document.getElementById("print").innerHTML = "Underweight. BMI:" + bmi;
+        } else if (bmi < 25.0) {
+            document.getElementById("print").innerHTML = "Normal. BMI:" + bmi;
+        } else if (bmi < 30.0) {
+            document.getElementById("print").innerHTML = "Overweight. BMI:" + bmi;
+        } else {
+            document.getElementById("print").innerHTML = "Obese. BMI" + bmi;
+        }
+    }
 </script>
 </body>
 </html>

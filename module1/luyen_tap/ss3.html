@@ -1,10 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>Title</title>
 </head>
 <body>
-$END$
+<script>
+  let s="";
+  let n=+prompt("chọn 1 số")
+  let total=0
+  for(let i=1;i<=n;i++){
+    total+=1/i
+    s+="1/"+i+"+"
+  }
+  document.write("S="+s+"="+total)
+</script>
 </body>
 </html>

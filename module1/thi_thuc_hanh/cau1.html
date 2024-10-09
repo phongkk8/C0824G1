@@ -1,10 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>ss1</title>
 </head>
 <body>
-$END$
+<script>
+    let arr = [];
+
+    function check(num) {
+        while (isNaN(num) || !Number.isInteger(num)) {
+            num = +prompt(`Số nhập vào phải là số và là số nguyên `)
+        }
+        return num;
+    }
+
+    function displayArr() {
+        let n = +(prompt(`Nhập số lượng phần tử của mảng: <br>`));
+        check(n);
+
+        for (let i = 0; i < n; i++) {
+            let numberInput = check(+prompt(`Nhập phần tử thứ ${i + 1}:`));
+            arr.push(numberInput);
+        }
+        document.write(`Các phần tử trong mảng: <br>`);
+        arr.forEach((element, index) => {
+            document.write(`Phần tử ${index}: ${element} <br>`);
+
+        })
+    }
+
+    displayArr();
+
+    let totalEvenSum = 0;
+    let totalOddSum = 0;
+    arr.forEach(num => {
+        if (num % 2 === 0) {
+            totalEvenSum += num;
+        } else {
+            totalOddSum += num;
+        }
+    });
+
+    document.write(`<br>Tổng số chẵn: ${totalEvenSum} <br>`);
+    document.write(`Tổng số lẻ: ${totalOddSum} <br>`);
+
+    let result = totalEvenSum - totalOddSum;
+    document.write(`Hiệu của tổng số chẵn và tổng số lẻ: ${result} <br>`);
+</script>
 </body>
 </html>

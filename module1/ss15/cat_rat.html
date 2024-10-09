@@ -1,10 +1,91 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>chuột và mèo</title>
 </head>
 <body>
-$END$
+<script>
+    class Rat {
+        nameRat;
+        weightRat;
+        speedRat;
+        statusRat;
+
+        constructor(name, weight, speed, status) {
+            this.nameRat = name
+            this.weightRat = weight
+            this.speedRat = speed
+            this.statusRat = status
+        }
+
+        die() {
+            return this.statusRat = true
+        }
+
+        // noDie(){
+        //   return  this.statusRat=false
+        // }
+        getStatus() {
+            if (this.statusRat) {
+                alert("Chuột chết!")
+            } else alert("Chuột còn sống!")
+        }
+
+        noiseRat(string) {
+            alert(string)
+        }
+    }
+
+    class Cat {
+        nameCat;
+        weightCat;
+        speedCat;
+        rat;
+
+        constructor(name, weight, speed, rat) {
+            this.nameCat = name;
+            this.weightCat = weight;
+            this.speedCat = speed;
+            this.rat = rat;
+        }
+
+        getNameCat() {
+            return this.nameCat
+        }
+
+        getWeightCat() {
+            return this.weightCat
+        }
+
+        getSpeedCat() {
+            return this.speedCat
+        }
+
+        grabRat() {
+            if (this.speedCat > this.rat.speedRat) {
+                alert("Mèo bắt được chuột!")
+            } else alert("Mèo không bắt kịp chuột")
+        }
+
+        eatRat() {
+            if (this.grabRat) {
+                this.weightCat += this.rat.weightRat;
+                this.rat.die()
+                alert("Mèo đã ăn chuột!")
+            }
+        }
+    }
+
+    let mickeyRat = new Rat("Mickey", 10, 50, false)
+    let tomCat = new Cat("Tom", 50, 70, mickeyRat)
+
+    mickeyRat.getStatus()
+    mickeyRat.noiseRat("la la la")
+    document.write("Tôi là: " + tomCat.getNameCat() + " nặng " + tomCat.getWeightCat() + " tốc độ: " + tomCat.getSpeedCat() + " km/h <br>")
+
+    tomCat.grabRat()
+    tomCat.eatRat()
+</script>
 </body>
 </html>

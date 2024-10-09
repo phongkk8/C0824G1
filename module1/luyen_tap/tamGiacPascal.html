@@ -1,10 +1,35 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="vi">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tam Giác Cân</title>
 </head>
 <body>
-$END$
+<script>
+    function drawTriangle(n) {
+        for (let i = 1; i <= n; i++) {
+            let line = '';
+
+            // Thêm khoảng trắng cho căn giữa
+            line += '&nbsp;'.repeat(n - i);
+
+            // Thêm phần số tăng
+            for (let j = 1; j <= i; j++) {
+                line += j;
+            }
+
+            // Thêm phần số giảm
+            for (let j = i - 1; j >= 1; j--) {
+                line += j;
+            }
+
+            document.write(line + '<br>'); // Thêm <br> để xuống dòng
+        }
+    }
+
+    // Gọi hàm với n = 5 để vẽ tam giác cân
+    drawTriangle(5);
+</script>
 </body>
 </html>

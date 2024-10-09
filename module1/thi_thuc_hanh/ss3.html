@@ -1,10 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>bài 3</title>
 </head>
 <body>
-$END$
+<script>
+  let arrNumberPrime=[];
+
+  function isPrime(number) {
+    for (let i = 2; i <= Math.sqrt(number); i++) {
+      if (number % i === 0) {
+        return false;
+      }
+    }
+    return true;
+  }
+
+
+  function checkIsPrime(arr){
+    for (let element of arr){
+      if (isPrime(element)){
+        arrNumberPrime.push(element)
+      }
+    }
+    return arrNumberPrime.sort((a,b)=>a-b);
+  }
+
+let arrCheck=[2,4,15,7,11,33,77];
+
+  document.write("Các số nguyên tố là: "+checkIsPrime(arrCheck))
+</script>
 </body>
 </html>
